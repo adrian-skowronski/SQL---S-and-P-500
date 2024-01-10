@@ -1,4 +1,4 @@
--- S&P500 index share prices in 2014-2017
+-- S&P 500 index share prices in 2014-2017
 -- PostgreSQL analysis by Adrian Skowronski
 
 
@@ -69,7 +69,7 @@ select sp.symbol as company
 , round(cast(buy.low as numeric), 2) as buy
 , round(cast(sell.high as numeric), 2) as sell
 , round(cast(sell.high-buy.low as numeric), 2) as profit
-, round(((sell.high::numeric / buy.low::numeric) - 1) * 100,2) as percentage_profit
+, round(((sell.high::numeric / buy.low::numeric) - 1) * 100, 2) as percentage_profit
 from sp
 join buy on sp.symbol = buy.symbol
 join sell on sp.symbol = sell.symbol
